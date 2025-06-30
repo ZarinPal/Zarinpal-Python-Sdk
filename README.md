@@ -37,8 +37,21 @@ pip install -i https://test.pypi.org/simple/ zarinpal-py-sdk
         "callback_url": "https://example.com/callback",  
     })
     ```
+2. **Calculate Fee**:
 
-2. **Transaction Management**:
+    Calculate the transaction fee
+
+    Example:
+    ```python
+        fee = zarinpal.fee.calculate({
+            "amount": 90000,
+            "currency": "IRR"
+        })
+        print("Fee Calculation Result:", fee)
+
+    ```
+
+3. **Transaction Management**:
 
     Fetch transaction details with filters, limits, and pagination using GraphQL.
 
@@ -52,7 +65,7 @@ pip install -i https://test.pypi.org/simple/ zarinpal-py-sdk
     })
     ```
 
-3. **Refunds & Reversals**:
+4. **Refunds & Reversals**:
 
     Easily process refunds or reverse a transaction with a single API call.
 
@@ -72,13 +85,13 @@ pip install -i https://test.pypi.org/simple/ zarinpal-py-sdk
     })
     ```
 
-4. **Sandbox Support**:
+5. **Sandbox Support**:
 
     Easily switch between sandbox and live environments for development and production.
 
 ## **How to Use**:
 
-5. **Initialize SDK**:
+6. **Initialize SDK**:
 
 ```bash
 from zarinpal import ZarinPal  
