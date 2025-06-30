@@ -36,6 +36,7 @@ class ZarinPal:
         self._reversals = None
         self._unverified = None
         self._verifications = None
+        self._fee = None
 
     @property
     def payments(self):
@@ -85,6 +86,13 @@ class ZarinPal:
             from resources.Verifications import Verifications
             self._verifications = Verifications(self)
         return self._verifications
+    
+    @property
+    def fee(self):
+        if self._fee is None:
+            from resources.Fee import Fee
+            self._fee = Fee(self)
+        return self._fee
 
     def request(self, method: str, endpoint: str, data: Optional[dict] = None) -> dict:
         """
