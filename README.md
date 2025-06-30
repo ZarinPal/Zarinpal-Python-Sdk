@@ -20,7 +20,7 @@ pip install zarinpal-py-sdk
 
 **From TestPyPI (for testing purposes)**:
 ```bash
-pip install -i https://test.pypi.org/simple/ zarinpal-py-sdk
+pip install -i https://test.pypi.org/simple/zarinpal-py-sdk
 ```
 
 ### **Features**:
@@ -94,8 +94,8 @@ pip install -i https://test.pypi.org/simple/ zarinpal-py-sdk
 6. **Initialize SDK**:
 
 ```bash
-from zarinpal import ZarinPal  
-from utils.Config import Config  
+from zarinpal.service import ZarinPal  
+from zarinpal.utils import Config  
 
 config = Config(  
     access_token="YourAccessToken",  
@@ -106,8 +106,8 @@ zarinpal = ZarinPal(config)
 
 Full Example: Fetching Transactions
 
-from zarinpal import ZarinPal  
-from utils.Config import Config  
+from zarinpal.service import ZarinPal  
+from zarinpal.utils import Config  
 
 def get_transactions():  
     try:  

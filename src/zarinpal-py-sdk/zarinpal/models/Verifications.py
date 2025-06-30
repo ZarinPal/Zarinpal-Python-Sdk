@@ -1,5 +1,5 @@
-from zarinpal import ZarinPal
-from utils.Validator import Validator
+from zarinpal.service import ZarinPal
+from zarinpal.utils import Validator
 
 class Verifications:
     def __init__(self, zarinpal: ZarinPal):

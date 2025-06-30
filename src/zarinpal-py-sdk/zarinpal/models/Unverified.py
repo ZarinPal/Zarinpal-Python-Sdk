@@ -1,4 +1,4 @@
-from zarinpal import ZarinPal
+from zarinpal.service import ZarinPal
 
 class Unverified:
     def __init__(self, zarinpal: ZarinPal):

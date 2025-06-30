@@ -1,5 +1,5 @@
 from zarinpal import ZarinPal
-from utils.Config import Config
+from zarinpal.utils.Config import Config
 
 def inquire_transaction():
     try:

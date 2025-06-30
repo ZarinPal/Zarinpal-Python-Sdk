@@ -41,56 +41,56 @@ class ZarinPal:
     @property
     def payments(self):
         if self._payments is None:
-            from resources.Payments import Payments
+            from models.Payments import Payments
             self._payments = Payments(self)
         return self._payments
 
     @property
     def inquiries(self):
         if self._inquiries is None:
-            from resources.Inquiries import Inquiries
+            from models.Inquiries import Inquiries
             self._inquiries = Inquiries(self)
         return self._inquiries
 
     @property
     def refunds(self):
         if self._refunds is None:
-            from resources.Refunds import Refunds
+            from models.Refunds import Refunds
             self._refunds = Refunds(self)
         return self._refunds
 
     @property
     def transactions(self):
         if self._transactions is None:
-            from resources.Transactions import Transactions
+            from models.Transactions import Transactions
             self._transactions = Transactions(self)
         return self._transactions
 
     @property
     def reversals(self):
         if self._reversals is None:
-            from resources.Reverses import Reversals
+            from models.Reverses import Reversals
             self._reversals = Reversals(self)
         return self._reversals
 
     @property
     def unverified(self):
         if self._unverified is None:
-            from resources.Unverified import Unverified
+            from models.Unverified import Unverified
             self._unverified = Unverified(self)
         return self._unverified
 
     @property
     def verifications(self):
         if self._verifications is None:
-            from resources.Verifications import Verifications
+            from models.Verifications import Verifications
             self._verifications = Verifications(self)
         return self._verifications
     
     @property
     def fee(self):
         if self._fee is None:
-            from resources.Fee import Fee
+            from models.Fee import Fee
             self._fee = Fee(self)
         return self._fee
 
