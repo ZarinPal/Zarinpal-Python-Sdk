@@ -3,6 +3,13 @@ from typing import List, Optional, Dict
 
 
 class Validator:
+    
+    @staticmethod
+    def validate_currency(currency: str | None) -> None:
+        valid_currencies = ["IRR", "IRT"]
+        if currency is not None and currency not in valid_currencies:
+            raise ValueError('Invalid currency format. Allowed values are "IRR" or "IRT".')
+        
     @staticmethod
     def validate_merchant_id(merchant_id: Optional[str]) -> None:
         if (

@@ -172,6 +172,37 @@ def test_verify_payment_invalid_amount(zarinpal):
     with pytest.raises(ValueError, match="Amount must be at least 1000."):
         zarinpal.verifications.verify(verification_data)
 
+#Fee calcuter Test
+def test_fee_calculation_success(zarinpal, mock_graphql_client):
+    fee_data = {
+        "amount": 5050543,
+        "currency": "IRR"
+    }
+
+    expected_response = {
+        "data": {
+            "amount": 5050543,
+            "fee": 1220,
+            "fee_type": "Merchant",
+            "suggested_amount": 5051763,
+            "code": 100,
+            "message": "Success"
+        },
+        "errors": []
+    }
+
+    mock_http_request(mock_graphql_client, 'POST', "/pg/v4/payment/feeCalculation.json", expected_response)
+
+    response = zarinpal.fee.calculate(fee_data)
+
+    assert response["data"]["amount"] == 5050543
+    assert response["data"]["fee"] == 1220
+    assert response["data"]["fee_type"] == "Merchant"
+    assert response["data"]["suggested_amount"] == 5051763
+    assert response["data"]["code"] == 100
+    assert response["data"]["message"] == "Success"
+    assert response["errors"] == []
+
 # Validator Tests
 def test_validate_merchant_id():
     assert Validator.validate_merchant_id('123e4567-e89b-12d3-a456-426614174000') is None
@@ -194,3 +225,5 @@ def test_validate_amount():
     Validator.validate_amount(15000)  # Valid case
     with pytest.raises(ValueError, match="Amount must be at least 1000."):
         Validator.validate_amount(500)  # Invalid case
+
+
