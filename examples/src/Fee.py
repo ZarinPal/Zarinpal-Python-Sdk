@@ -4,8 +4,7 @@ from utils.Config import Config
 def calculate_fee():
     try:
         config = Config(
-            access_token="",
-            merchant_id=""
+            merchant_id = ""
         )
         zarinpal = ZarinPal(config)
 
