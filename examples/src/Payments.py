@@ -1,12 +1,12 @@
+from zarinpal_utils.Config import Config
 from zarinpal import ZarinPal
-from utils.Config import Config
 
 
 
 def initiate_payment():
     try:
         config = Config(
-            merchant_id="your merchant code",  
+            merchant_id= "YOUR_MERCHANT_ID",  
             sandbox=True,  
         )
         zarinpal = ZarinPal(config)
@@ -16,7 +16,7 @@ def initiate_payment():
             "description": "Payment creat", 
             "mobile": "09123456789",  
             "email": "customer@example.com",  
-            "cardPan": ["6219861034529007", "5022291073776543"], 
+            "cardPan": "6219861034529007", 
             "referrer_id": "affiliate123", 
         })
 

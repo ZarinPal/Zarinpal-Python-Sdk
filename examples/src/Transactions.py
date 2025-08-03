@@ -1,15 +1,15 @@
+from zarinpal_utils.Config import Config
 from zarinpal import ZarinPal
-from utils.Config import Config
 
 def get_transactions():
     try:
         config = Config(
-            access_token= "Your Token",
+            access_token= "Your_Token",
         )
         zarinpal = ZarinPal(config)
 
         transactions = zarinpal.transactions.list({
-            "terminal_id": "Your terminal ID",
+            "terminal_id": "Your_terminal_ID",
             "filter": "PAID",  
             "limit": 10,  
             "offset": 0,

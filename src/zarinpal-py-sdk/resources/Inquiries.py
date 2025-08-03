@@ -24,7 +24,7 @@ class Inquiries:
         :raises RuntimeError: If the API call fails.
         """
         # Avoid circular import by importing Validator here
-        from utils.Validator import Validator
+        from zarinpal_utils.Validator import Validator
 
         # Validate input data
         if "authority" not in data:

@@ -1,18 +1,18 @@
+from zarinpal_utils.Config import Config
 from zarinpal import ZarinPal
-from utils.Config import Config
 
 def inquire_transaction():
     try:
         config = Config(
-            merchant_id= "Your merchant code",
+            merchant_id= "YOUR_MERCHANT_ID",
             
             sandbox=True,  
         )
         zarinpal = ZarinPal(config)
 
         response = zarinpal.inquiries.inquire({
-            #Enter authority:
-            "authority": " "   
+            #Enter your authority:
+            "authority": ""   
         })
 
         print("Inquiry Result:", response)

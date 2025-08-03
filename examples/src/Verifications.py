@@ -1,9 +1,9 @@
+from zarinpal_utils.Config import Config
 from zarinpal import ZarinPal
-from utils.Config import Config
 
 
-
-authority = "Your Authority"    
+#Enter authority:
+authority = ""    
 status = "OK"
 
 
@@ -17,7 +17,7 @@ def verify_payment(authority, status):
         if amount:
             try:
                 config = Config(
-                    merchant_id= "Your merchant code", 
+                    merchant_id= "YOUR_MERCHANT_ID", 
                     sandbox=True, 
                 )
                 zarinpal = ZarinPal(config)    

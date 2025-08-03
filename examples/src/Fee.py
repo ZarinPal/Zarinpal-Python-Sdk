@@ -1,10 +1,10 @@
+from zarinpal_utils.Config import Config
 from zarinpal import ZarinPal
-from utils.Config import Config
 
 def calculate_fee():
     try:
         config = Config(
-            merchant_id = ""
+            merchant_id = "YOUR_MERCHANT_ID"
         )
         zarinpal = ZarinPal(config)
 

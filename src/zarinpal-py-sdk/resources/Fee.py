@@ -1,5 +1,5 @@
 from zarinpal import ZarinPal
-from utils.Validator import Validator
+from zarinpal_utils.Validator import Validator
 
 class Fee:
     def __init__(self, zarinpal: ZarinPal):
